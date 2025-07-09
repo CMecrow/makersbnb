@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add your space to our listings!</title>
+</head>
+<body>
+<!-- I assume you added price and description columns to spaces in a previous Page -->
+<form th:action="@{/spaces}" th:object="${space}" method="post">
+    <label th:for="name">Name:</label>
+    <input type="text" th:field="*{name}"/> <br>
+    <label th:for="description">Description:</label>
+    <input type="text" th:field="*{description}"/> <br>
+    <label th:for="rules">Rules:</label>
+    <input type="text" th:field="*{rules}"/> <br>
+    <label th:for="price">Price:</label>
+    <input type="number" th:field="*{price}"/> <br>
+    <input type="submit" value="Submit"/>
+    <input type="reset" value="Reset" />
+</form>
+
+</body>
+</html>

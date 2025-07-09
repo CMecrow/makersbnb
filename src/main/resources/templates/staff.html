@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- this line prevents IntelliJ from complaining about thymeleaf syntax -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MakersBnB</title>
+</head>
+<body>
+<h1>Meet the team</h1>
+<!-- th:text is a Thymeleaf atttribute used to generate the actual `h3` text -->
+<!-- within it, we use nSpaces which was passed in from the controller -->
+<ul>
+    <!-- using th:each we tell Thymeleaf to render an li for each review -->
+    <li th:each="staff : ${staff}" th:text="${staff.name + ': ' + staff.role + '.'}"></li>
+</ul>
+</body>
+</html>

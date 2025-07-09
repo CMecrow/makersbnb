@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- this line prevents IntelliJ from complaining about thymeleaf syntax -->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5" >
+
+<head>
+    <title>MakersBnB</title>
+</head>
+<body>
+<h1>Welcome to MakersBnB</h1>
+<div sec:authorize="isAuthenticated()">
+    <p>Hello, you are logged in as <span sec:authentication="principal.attributes['email']"></span></p>
+    <p><a href="/logout">Logout</a> </p>
+</div>
+
+<!-- th:text is a Thymeleaf atttribute used to generate the actual `h3` text -->
+<!-- within it, we use nSpaces which was passed in from the controller -->
+<h3 th:text="${nSpaces} + ' spaces are waiting to be discovered'"></h3>
+<h4 th:text="${'Join our ' + bookings + ' bookings made this week!'}"></h4>
+<h4>Recent reviews</h4>
+<ul>
+    <!-- using th:each we tell Thymeleaf to render an li for each review -->
+    <li th:each="review : ${reviews}" th:text="${review}"></li>
+</ul>
+</body>
+</html>

@@ -1,8 +1,6 @@
 package com.makers.makersbnb.controller;
 
-import com.makers.makersbnb.model.Space;
 import com.makers.makersbnb.model.Staff;
-import com.makers.makersbnb.repository.SpaceRepository;
 import com.makers.makersbnb.repository.StaffRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
